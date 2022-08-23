@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "productName": "[주문제작]비건 매트 립스틱 7컬러입니다다다다다다다다다다다다다",
+    "category": "뷰티",
+    "price": "원가:25000원",
+    "status": "판매중",
+    "weggleInfo": "심사중",
+    "insertDate": "2021/06/29",
+    "updateDate": "2021/07/01",
+    "productExam": "심사중",
+    "etc": "수정"
+  },
+  {
+    "id": 2,
+    "productName": "[주문제작]비건 매트 립스틱 7컬러",
+    "category": "뷰티",
+    "price": "원가:25000원",
+    "status": "판매중",
+    "weggleInfo": "심사중",
+    "insertDate": "2021/06/29",
+    "updateDate": "2021/07/01",
+    "productExam": "심사중",
+    "etc": "수정"
+  },
+  {
+    "id": 3,
+    "productName": "[주문제작]비건 매트 립스틱 7컬러",
+    "category": "뷰티",
+    "price": "원가:25000원",
+    "status": "판매중",
+    "weggleInfo": "심사중",
+    "insertDate": "2021/06/29",
+    "updateDate": "2021/07/01",
+    "productExam": "심사중",
+    "etc": "수정"
+  },
+  {
+    "id": 4,
+    "productName": "[주문제작]비건 매트 립스틱 7컬러",
+    "category": "뷰티",
+    "price": "원가:25000원",
+    "status": "판매중",
+    "weggleInfo": "심사중",
+    "insertDate": "2021/06/29",
+    "updateDate": "2021/07/01",
+    "productExam": "심사중",
+    "etc": "수정"
+  },
+  {
+    "id": 5,
+    "productName": "[주문제작]비건 매트 립스틱 7컬러",
+    "category": "뷰티",
+    "price": "원가:25000원",
+    "status": "판매중",
+    "weggleInfo": "심사중",
+    "insertDate": "2021/06/29",
+    "updateDate": "2021/07/01",
+    "productExam": "심사중",
+    "etc": "수정"
+  },
+  {
+    "id": 6,
+    "productName": "[주문제작]비건 매트 립스틱 7컬러",
+    "category": "뷰티",
+    "price": "원가:25000원",
+    "status": "판매중",
+    "weggleInfo": "심사중",
+    "insertDate": "2021/06/29",
+    "updateDate": "2021/07/01",
+    "productExam": "심사중",
+    "etc": "수정"
+  }
+]
