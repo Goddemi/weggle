@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 import variables from '../../../styles/variables';
 import PriceInput from '../../../components/PriceInput/PriceInput';
+import RegisterToggle from '../../../components/RegisterToggle/RegisterToggle';
 
 const Price = () => {
   const [productPrice, setProductPrice] = useState(0);
@@ -42,37 +42,17 @@ const Price = () => {
       />
       <Discount>
         <span>할인</span>
-        <ToggleButtonGroup
-          color="primary"
+        <RegisterToggle
+          class="toggle"
           value={discountBtn}
-          exclusive
-          onChange={handleDiscount}
-          aria-label="Platform"
-        >
-          <ToggleButton
-            value="discount"
-            style={{
-              minWidth: '121px',
-              maxHeight: '30px',
-            }}
-          >
-            설정함
-          </ToggleButton>
-          <ToggleButton
-            value=""
-            style={{
-              minWidth: '121px',
-              maxHeight: '30px',
-            }}
-          >
-            설정안함
-          </ToggleButton>
-        </ToggleButtonGroup>
+          handler={handleDiscount}
+          toggleValue="discount"
+        />
       </Discount>
       {discountBtn === 'discount' && (
-        <>
+        <DiscountContainer>
           <DiscountInput>
-            <span>할인 단위</span>
+            <span>할인 설정</span>
             <input
               onChange={e => {
                 handleDiscountPrice(e);
@@ -108,7 +88,7 @@ const Price = () => {
               </>
             )}
           </DiscountPrice>
-        </>
+        </DiscountContainer>
       )}
     </PriceContainer>
   );
@@ -117,7 +97,7 @@ const Price = () => {
 export default Price;
 
 const PriceContainer = styled.div`
-  span {
+  span:not(.toggle) {
     font-size: 13px;
     ${variables.subMenuTitleWidth}
   }
@@ -127,6 +107,8 @@ const Discount = styled.div`
   ${variables.registerBox}
   border-top: 0;
 `;
+
+const DiscountContainer = styled.div``;
 
 const DiscountPrice = styled.div`
   ${variables.registerBox}
