@@ -4,8 +4,6 @@ import SearchInfo from './SearchInfo';
 import axios from 'axios';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import PropTypes from 'prop-types';
 
 const ProductList = () => {
   const [info, setInfo] = useState({
@@ -14,11 +12,13 @@ const ProductList = () => {
     productDate: '',
     productStatus: '',
   });
+  const [check, setCheck] = useState({});
   const [searchData, setSearchData] = useState('');
 
   const onChange = e => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
+    // console.log(info);
   };
 
   const onSearch = () => {
@@ -27,58 +27,17 @@ const ProductList = () => {
     });
     // .catch(rej => console.log('실패'));
   };
-  //
-  const RenderDate = props => {
-    const { hasFocus, value } = props;
-    const buttonElement = React.useRef(null);
-    const rippleRef = React.useRef(null);
 
-    React.useLayoutEffect(() => {
-      if (hasFocus) {
-        const input = buttonElement.current?.querySelector('input');
-        input?.focus();
-      } else if (rippleRef.current) {
-        // Only available in @mui/material v5.4.1 or later
-        rippleRef.current.stop({});
-      }
-    }, [hasFocus]);
-
-    return (
-      <strong>
-        {value?.getFullYear() ?? ''}
-        <Button
-          component="button"
-          ref={buttonElement}
-          touchRippleRef={rippleRef}
-          variant="contained"
-          size="small"
-          style={{ marginLeft: 16 }}
-          // Remove button from tab sequence when cell does not have focus
-          tabIndex={hasFocus ? 0 : -1}
-          onKeyDown={event => {
-            if (event.key === ' ') {
-              // Prevent key navigation when focus is on button
-              event.stopPropagation();
-            }
-          }}
-        >
-          Open
-        </Button>
-      </strong>
-    );
+  const onDelete = e => {
+    let a = searchData.filter(number => number.id > 3);
+    setSearchData(a);
+    console.log(a);
+    // console.log(searchData);
   };
 
-  RenderDate.propTypes = {
-    /**
-     * If true, the cell is the active element.
-     */
-    hasFocus: PropTypes.bool.isRequired,
-    /**
-     * The cell value, but if the column has valueGetter, use getValue.
-     */
-    value: PropTypes.instanceOf(Date),
+  const onCheck = e => {
+    setCheck();
   };
-  //
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -110,7 +69,7 @@ const ProductList = () => {
               조회결과 &nbsp;
               <S.ResultLength>(총:{searchData.length}건)</S.ResultLength>
             </S.SearchTitle>
-            <S.ListDelete>삭제</S.ListDelete>
+            <S.ListDelete onClick={onDelete}>삭제</S.ListDelete>
             <S.ResultTable>
               <S.DataGridField>
                 <Box
@@ -122,8 +81,8 @@ const ProductList = () => {
                     getRowHeight={() => 'auto'}
                     pageSize={5}
                     rowsPerPageOptions={[5]}
-                    checkboxSelection
-                    style={{ overflowWrap: 'break-word' }}
+                    checkboxSelection={true}
+                    // style={{ overflowWrap: 'break-word' }}
                   />
                 </Box>
               </S.DataGridField>

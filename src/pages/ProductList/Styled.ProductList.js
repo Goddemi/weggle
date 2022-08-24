@@ -5,12 +5,14 @@ const S = {};
 S.Productlist = styled.div`
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   width: auto;
+  height: 100vh;
   box-sizing: border-box;
   background: rgba(218, 218, 218, 1);
 `;
 S.Wraper = styled.div`
   padding: 50px;
   /* border: 1px solid black; */
+  background: rgba(218, 218, 218, 1);
 `;
 
 S.Category = styled.div`

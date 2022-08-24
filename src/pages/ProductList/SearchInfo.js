@@ -7,12 +7,12 @@ const SearchInfo = props => {
   return (
     <S.SearchInfo>
       {SEARCH_DATA.map(data => {
-        const { id, codeName, name } = data;
+        const { id, codeName, name, type } = data;
 
         return (
           <S.SearchTable key={id}>
             <S.TableTitle>{name}</S.TableTitle>
-            <S.TableContent name={codeName} onChange={onChange} />
+            <S.TableContent type={type} name={codeName} onChange={onChange} />
           </S.SearchTable>
         );
       })}
@@ -25,21 +25,25 @@ export default SearchInfo;
 const SEARCH_DATA = [
   {
     id: 1,
+    type: 'text',
     codeName: 'productName',
     name: '상품명검색',
   },
   {
     id: 2,
+    type: 'text',
     codeName: 'productCategory',
     name: '상품 카테고리',
   },
   {
     id: 3,
+    type: 'number',
     codeName: 'productDate',
     name: '상품등록일',
   },
   {
     id: 4,
+    type: 'text',
     codeName: 'productStatus',
     name: '판매상태',
   },
