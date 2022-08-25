@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import RegisterToggle from '../../../components/RegisterToggle/RegisterToggle';
 import variables from '../../../styles/variables';
-import CloseIcon from '@mui/icons-material/Close';
 
 const Option = () => {
   const [optionBtn, setOptionBtn] = useState('');

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import variables from '../../styles/variables';
 import Category from './Category/Category';
 import Price from './Price/Price';
 import Option from './Option/Option';
+import ImgUpload from './ImgUpload/ImgUpload';
 
 const ProductRegist = () => {
   return (
@@ -25,10 +26,7 @@ const ProductRegist = () => {
 
         <Option />
 
-        <ImgUpload>
-          <RegisterTitle title="상품이미지" />
-          <ImgContent />
-        </ImgUpload>
+        <ImgUpload />
 
         <VideoUpload>
           <RegisterTitle title="배송비" />
@@ -88,10 +86,6 @@ const NameContent = styled.div`
     outline: none;
   }
 `;
-
-const ImgUpload = styled.div``;
-
-const ImgContent = styled(CategoryContent)``;
 
 const VideoUpload = styled.div``;
 

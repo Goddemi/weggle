@@ -28,6 +28,7 @@ const variables = {
 
   subMenuTitleWidth: css`
     width: 200px;
+    font-size: 13px;
   `,
 };
 

@@ -97,8 +97,7 @@ const Price = () => {
 export default Price;
 
 const PriceContainer = styled.div`
-  span:not(.toggle) {
-    font-size: 13px;
+  span {
     ${variables.subMenuTitleWidth}
   }
 `;
