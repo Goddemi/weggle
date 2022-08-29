@@ -69,20 +69,36 @@ const Price = () => {
               <>
                 <span>할인된 가격</span>
                 <div>
-                  총 {(productPrice - discountPrice).toLocaleString()}원 (
-                  {(discountPrice - 0).toLocaleString()}원 할인된 가격)
+                  총{' '}
+                  {(
+                    Math.round((productPrice - discountPrice) / 10) * 10
+                  ).toLocaleString()}
+                  원 (
+                  {(
+                    productPrice -
+                    Math.round((productPrice - discountPrice) / 10) * 10
+                  ).toLocaleString()}
+                  원 할인된 가격)
                 </div>
               </>
             ) : (
               <>
                 <span>할인된 가격</span>
                 <div>
-                  총{' '}
+                  총
+                  {(
+                    Math.round(
+                      (productPrice - (productPrice * discountPrice) / 100) / 10
+                    ) * 10
+                  ).toLocaleString()}
+                  원 (
                   {(
                     productPrice -
-                    (productPrice * discountPrice) / 100
+                    Math.round(
+                      (productPrice - (productPrice * discountPrice) / 100) / 10
+                    ) *
+                      10
                   ).toLocaleString()}
-                  원 ({((productPrice * discountPrice) / 100).toLocaleString()}
                   원 할인된 가격)
                 </div>
               </>

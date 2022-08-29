@@ -8,6 +8,7 @@ import Option from './Option/Option';
 import ImgUpload from './ImgUpload/ImgUpload';
 import VideoUpload from './VideoUpload/VideoUpload';
 import Detail from './Detail/Detail';
+import ExchangeRule from './ExchangeRule.js/ExchangeRule';
 
 const ProductRegist = () => {
   return (
@@ -25,19 +26,12 @@ const ProductRegist = () => {
         </ProductName>
 
         <Price />
-
         <Option />
-
         <ImgUpload />
-
         <VideoUpload width={400} height={300} />
-
         <Detail />
 
-        <ExchangeRule>
-          <RegisterTitle title="교환/반품 정책" />
-          <ExchangeContent />
-        </ExchangeRule>
+        <ExchangeRule />
       </RegisterContainer>
     </Container>
   );
@@ -76,11 +70,3 @@ const NameContent = styled.div`
     outline: none;
   }
 `;
-
-const VideoContent = styled(CategoryContent)``;
-
-const DetailContent = styled(CategoryContent)``;
-
-const ExchangeRule = styled.div``;
-
-const ExchangeContent = styled(CategoryContent)``;
