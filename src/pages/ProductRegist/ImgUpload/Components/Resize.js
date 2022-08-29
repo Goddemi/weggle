@@ -7,7 +7,7 @@ const handleResize = async file => {
 };
 
 const handleFileOnChange = async file => {
-  const options = { maxSizeMB: 2, maxWidthOrHeight: 100 };
+  const options = { maxSizeMB: 1, maxWidthOrHeight: 150 };
   try {
     const compressedFile = await imageCompression(file, options);
     const resultFile = new File([compressedFile], compressedFile.name, {

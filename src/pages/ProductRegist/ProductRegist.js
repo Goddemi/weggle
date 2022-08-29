@@ -6,6 +6,8 @@ import Category from './Category/Category';
 import Price from './Price/Price';
 import Option from './Option/Option';
 import ImgUpload from './ImgUpload/ImgUpload';
+import VideoUpload from './VideoUpload/VideoUpload';
+import Detail from './Detail/Detail';
 
 const ProductRegist = () => {
   return (
@@ -28,27 +30,15 @@ const ProductRegist = () => {
 
         <ImgUpload />
 
-        <VideoUpload>
-          <RegisterTitle title="배송비" />
-          <VideoContent />
-        </VideoUpload>
+        <VideoUpload width={400} height={300} />
 
-        <DeliveryPrice>
-          <RegisterTitle title="반품/교환비" />
-          <DeliveryContent />
-        </DeliveryPrice>
-
-        <Detail>
-          <RegisterTitle title="상품상세 정보" />
-          <DetailContent />
-        </Detail>
+        <Detail />
 
         <ExchangeRule>
           <RegisterTitle title="교환/반품 정책" />
           <ExchangeContent />
         </ExchangeRule>
       </RegisterContainer>
-      <Category>hi</Category>;
     </Container>
   );
 };
@@ -87,15 +77,7 @@ const NameContent = styled.div`
   }
 `;
 
-const VideoUpload = styled.div``;
-
 const VideoContent = styled(CategoryContent)``;
-
-const DeliveryPrice = styled.div``;
-
-const DeliveryContent = styled(CategoryContent)``;
-
-const Detail = styled.div``;
 
 const DetailContent = styled(CategoryContent)``;
 

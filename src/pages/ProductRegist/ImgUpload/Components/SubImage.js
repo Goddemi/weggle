@@ -35,10 +35,10 @@ const SubImage = () => {
     };
     return imageList.map(image => {
       return (
-        <div key={image.id}>
+        <ImageBox key={image.id}>
           <img alt={image.id} src={image.url} />
-          <button onClick={() => removeImage(image.id)}>삭제</button>
-        </div>
+          <button onClick={() => removeImage(image.id)}>✕</button>
+        </ImageBox>
       );
     });
   };
@@ -63,4 +63,19 @@ export default SubImage;
 
 const SubContainer = styled.div`
   display: flex;
+`;
+
+const ImageBox = styled.div`
+  position: relative;
+  margin-right: 20px;
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
 `;

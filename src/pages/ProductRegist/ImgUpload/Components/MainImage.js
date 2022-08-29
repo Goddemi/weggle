@@ -11,20 +11,19 @@ const MainImage = () => {
     setMainImage([newImage]);
     event.target.value = '';
   };
-  console.log(mainImage);
 
   const MainImages = ({ imageList }) => {
     const removeImage = () => {
       setMainImage([]);
-      console.log(mainImage);
+
       return;
     };
     return imageList.map((image, i) => {
       return (
-        <div key={i}>
+        <ImageBox key={i}>
           <img alt="main" src={image.url} />
-          <button onClick={removeImage}>삭제</button>
-        </div>
+          <button onClick={removeImage}>✕</button>
+        </ImageBox>
       );
     });
   };
@@ -52,4 +51,19 @@ export default MainImage;
 
 const MainContainer = styled.div`
   display: flex;
+`;
+
+const ImageBox = styled.div`
+  position: relative;
+  margin-right: 20px;
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
 `;
