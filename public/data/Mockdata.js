@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const Mockdata = () => {
-  return <div></div>;
+  return <div />;
 };
 
 export default Mockdata;
