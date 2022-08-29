@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import variables from '../../styles/variables';
 
 const SearchInfo = props => {
-  const { onChange } = props;
+  const { onChange, onKeyPress } = props;
   return (
     <S.SearchInfo>
       {SEARCH_DATA.map(data => {
@@ -12,7 +12,24 @@ const SearchInfo = props => {
         return (
           <S.SearchTable key={id}>
             <S.TableTitle>{name}</S.TableTitle>
-            <S.TableContent type={type} name={codeName} onChange={onChange} />
+            {type === 'checkbox' ? (
+              PRODUCT_CATEGORY.map(data => {
+                return (
+                  <S.TableContent
+                    type={type}
+                    name={codeName}
+                    onChange={onChange}
+                  />
+                );
+              })
+            ) : (
+              <S.TableContent
+                type={type}
+                name={codeName}
+                onChange={onChange}
+                onKeyPress={onKeyPress}
+              />
+            )}
           </S.SearchTable>
         );
       })}
@@ -31,7 +48,7 @@ const SEARCH_DATA = [
   },
   {
     id: 2,
-    type: 'text',
+    type: 'checkbox',
     codeName: 'productCategory',
     name: '상품 카테고리',
   },
@@ -46,6 +63,24 @@ const SEARCH_DATA = [
     type: 'text',
     codeName: 'productStatus',
     name: '판매상태',
+  },
+];
+
+const PRODUCT_CATEGORY = [
+  {
+    id: 1,
+    codeName: 'checkbox1',
+    name: '체크박스1',
+  },
+  {
+    id: 2,
+    codeName: 'checkbox1',
+    name: '체크박스1',
+  },
+  {
+    id: 3,
+    codeName: 'checkbox1',
+    name: '체크박스1',
   },
 ];
 
