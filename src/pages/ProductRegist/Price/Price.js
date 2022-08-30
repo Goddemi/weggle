@@ -43,7 +43,7 @@ const Price = () => {
       <Discount>
         <span>할인</span>
         <RegisterToggle
-          class="toggle"
+          className="toggle"
           value={discountBtn}
           handler={handleDiscount}
           toggleValue="discount"
@@ -114,7 +114,7 @@ export default Price;
 
 const PriceContainer = styled.div`
   span {
-    ${variables.subMenuTitleWidth}
+    ${variables.subMenuTitle}
   }
 `;
 

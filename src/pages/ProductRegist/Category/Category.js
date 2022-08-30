@@ -5,6 +5,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import styled from 'styled-components';
 
 const Category = () => {
   const CATEGORY_LIST = [
@@ -22,7 +23,7 @@ const Category = () => {
     setCategorySelect(event.target.value);
   };
   return (
-    <div>
+    <CategoryContainer>
       <RegisterTitle title="카테고리 선택" />
 
       <Box sx={{ minWidth: 120 }}>
@@ -47,8 +48,19 @@ const Category = () => {
           </Select>
         </FormControl>
       </Box>
-    </div>
+    </CategoryContainer>
   );
 };
 
 export default Category;
+
+const CategoryContainer = styled.div`
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    font-size: 13px;
+  }
+
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: 1px solid #dadada;
+    border-radius: 0;
+  }
+`;

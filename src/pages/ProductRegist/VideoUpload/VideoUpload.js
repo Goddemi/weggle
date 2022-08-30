@@ -40,7 +40,7 @@ const VideoUpload = props => {
             accept=".mp4"
           />
           {!source && (
-            <button class="addButton" onClick={handleChoose}>
+            <button className="addButton" onClick={handleChoose}>
               +
             </button>
           )}
@@ -66,7 +66,7 @@ const VideoContent = styled.div`
 
   span {
     font-size: 13px;
-    ${variables.subMenuTitleWidth}
+    ${variables.subMenuTitle}
   }
 `;
 

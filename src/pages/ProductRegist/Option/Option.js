@@ -3,13 +3,21 @@ import styled from 'styled-components';
 import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import RegisterToggle from '../../../components/RegisterToggle/RegisterToggle';
 import variables from '../../../styles/variables';
+import OptionSet from './Components/OptionSet';
 
 const Option = () => {
   const [optionBtn, setOptionBtn] = useState('');
 
+  const [optionTitle, setOptionTitle] = useState([]);
+
+  const addTitle = e => {
+    setOptionTitle([...optionTitle, '']);
+  };
+
   const handleOption = (event, newAlignment) => {
     setOptionBtn(newAlignment);
   };
+
   return (
     <OptionContainer>
       <RegisterTitle title="옵션" />
@@ -17,7 +25,7 @@ const Option = () => {
       <OptionContent>
         <span>옵션 설정</span>
         <RegisterToggle
-          class="toggle"
+          className="toggle"
           value={optionBtn}
           handler={handleOption}
           toggleValue="option"
@@ -25,22 +33,28 @@ const Option = () => {
       </OptionContent>
       {optionBtn === 'option' && (
         <OptionBox>
-          <OptionInfo>
-            <OptionTitle>
-              <div>옵션명</div>
-              <input />
-            </OptionTitle>
-            <OptionValue>
-              <div>옵션값</div>
-              <input placeholder="Enter 또는 Tab키를 눌러 연속 입력" />
-            </OptionValue>
-            <EttentialBox>
-              <input type="checkbox" />
-            </EttentialBox>
-            <div className="close">X</div>
-          </OptionInfo>
+          <OptionMenu>
+            <div>옵션명</div>
+            <div>옵션값</div>
+          </OptionMenu>
 
-          <OptionAddBtn>옵션 추가</OptionAddBtn>
+          {optionTitle.map((title, i) => {
+            return (
+              <OptionInfo key={i}>
+                <OptionTitle>
+                  <input />
+                </OptionTitle>
+                <OptionSet />
+
+                <EttentialBox>
+                  <input type="checkbox" />
+                </EttentialBox>
+                <div className="close">✕</div>
+              </OptionInfo>
+            );
+          })}
+
+          <OptionAddBtn onClick={addTitle}>옵션 추가</OptionAddBtn>
         </OptionBox>
       )}
     </OptionContainer>
@@ -48,21 +62,36 @@ const Option = () => {
 };
 export default Option;
 
+const OptionContainer = styled.div``;
+
 const OptionContent = styled.div`
   ${variables.registerBox}
 
   span:not(.toggle) {
     font-size: 13px;
-    ${variables.subMenuTitleWidth}
+    ${variables.subMenuTitle}
   }
 `;
-
-const OptionContainer = styled.div``;
 
 const OptionBox = styled.div`
   border: 1px solid ${props => props.theme.lineGray};
   border-top: none;
   padding: 16.5px 20px;
+`;
+
+const OptionMenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    &:first-child {
+      width: 300px;
+    }
+
+    &:last-child {
+      width: 500px;
+    }
+  }
 `;
 
 const OptionAddBtn = styled.button`
@@ -74,20 +103,28 @@ const OptionAddBtn = styled.button`
   cursor: pointer;
 `;
 
+const OptionTitle = styled.div`
+  input {
+    width: 300px;
+  }
+`;
+
 const OptionInfo = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
+
   > div {
     margin: 0 20px;
   }
 
   div {
-    padding: 10px 0 20px 0;
     font-size: 14px;
     color: gray;
   }
 
   input {
+    padding-top: 25px;
     border: none;
     border-bottom: 1px solid ${props => props.theme.lineGray};
     outline: none;
@@ -95,18 +132,6 @@ const OptionInfo = styled.div`
 
   .close {
     cursor: pointer;
-  }
-`;
-
-const OptionTitle = styled.div`
-  input {
-    width: 300px;
-  }
-`;
-
-const OptionValue = styled.div`
-  input {
-    width: 500px;
   }
 `;
 

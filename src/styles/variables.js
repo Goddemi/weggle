@@ -26,7 +26,7 @@ const variables = {
   
   `,
 
-  subMenuTitleWidth: css`
+  subMenuTitle: css`
     width: 200px;
     font-size: 13px;
   `,

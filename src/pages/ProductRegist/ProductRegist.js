@@ -17,20 +17,17 @@ const ProductRegist = () => {
       <PageTitle> 상품등록 </PageTitle>
       <RegisterContainer>
         <Category />
-
         <ProductName>
           <RegisterTitle title="상품명" />
           <NameContent>
             <input placeholder="상품명의 정확한 정보만 입력해주세요. (최소 10자)" />
           </NameContent>
         </ProductName>
-
         <Price />
         <Option />
         <ImgUpload />
         <VideoUpload width={400} height={300} />
         <Detail />
-
         <ExchangeRule />
       </RegisterContainer>
     </Container>
@@ -53,9 +50,6 @@ const RegisterContainer = styled.div`
     margin-bottom: 20px;
     background-color: #ffffff;
   }
-`;
-const CategoryContent = styled.div`
-  ${variables.registerBox}
 `;
 
 const ProductName = styled.div``;

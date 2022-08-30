@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "browser-image-compression": "^2.0.0",
     "quill-image-resize-module-react": "^3.0.0",
+    "quill-video-resize": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",

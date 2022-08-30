@@ -38,7 +38,7 @@ const ImgContent = styled.div`
   }
 
   span {
-    ${variables.subMenuTitleWidth}
+    ${variables.subMenuTitle}
   }
 
   label {
