@@ -11,6 +11,7 @@ const ProductList = () => {
     productDate: '',
     productStatus: '',
   });
+
   const [showResult, setShowResult] = useState({});
   const [searchData, setSearchData] = useState('');
 
@@ -33,7 +34,7 @@ const ProductList = () => {
     }
   };
 
-  // console.log(info);
+  console.log(info);
   const onSearch = e => {
     const filterData = searchData.filter(row =>
       row.productName.includes(info.productName)
