@@ -34,7 +34,6 @@ const ProductList = () => {
     }
   };
 
-  console.log(info);
   const onSearch = e => {
     const filterData = searchData.filter(row =>
       row.productName.includes(info.productName)
@@ -42,6 +41,7 @@ const ProductList = () => {
 
     // console.log('필터데이터', filterData);
     setShowResult(filterData);
+    console.log(info);
   };
 
   return (

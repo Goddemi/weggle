@@ -6,15 +6,13 @@ import { NativeSelect } from '@mui/material';
 
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import dayjs from 'dayjs';
 
 const SearchInfo = props => {
   const { onChange, onKeyPress } = props;
-  const [value, setValue] = useState(null);
-  console.log(value.$d);
+  const [value, setValue] = useState(dayjs());
 
+  // console.log(value);
   return (
     <S.SearchInfo>
       {SEARCH_DATA.map(data => {
@@ -23,7 +21,7 @@ const SearchInfo = props => {
           <S.SearchTable key={id}>
             <S.TableTitle>{name}</S.TableTitle>
             <S.TableField>
-              {type === 'text' && (
+              {codeName === 'productName' && (
                 <Input
                   name={codeName}
                   onChange={onChange}
@@ -31,7 +29,7 @@ const SearchInfo = props => {
                   fullWidth
                 />
               )}
-              {type === 'select' && (
+              {codeName === 'productCategory' && (
                 <NativeSelect
                   id="select"
                   onChange={onChange}
@@ -47,19 +45,29 @@ const SearchInfo = props => {
                   })}
                 </NativeSelect>
               )}
-              {type === 'date' && (
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    value={value}
-                    onChange={newValue => {
-                      setValue(newValue);
-                    }}
-                    showToolbar={true}
-                    // inputFormat="YYYY-MM-DD"
-                    renderInput={params => <TextField {...params} />}
-                    className="hello"
-                  />
-                </LocalizationProvider>
+              {codeName === 'productDate' && (
+                <TextField
+                  type="date"
+                  name="productDate"
+                  onChange={onChange}
+                  fullWidth
+                />
+              )}
+              {codeName === 'productStatus' && (
+                <NativeSelect
+                  id="select"
+                  onChange={onChange}
+                  fullWidth
+                  name="productStatus"
+                >
+                  {SELL_STATUS_DATA.map(data => {
+                    return (
+                      <option key={data.id} value={data.value}>
+                        {data.value}
+                      </option>
+                    );
+                  })}
+                </NativeSelect>
               )}
             </S.TableField>
           </S.SearchTable>
@@ -92,7 +100,7 @@ const SEARCH_DATA = [
   },
   {
     id: 4,
-    type: 'text',
+    type: 'select',
     codeName: 'productStatus',
     name: '판매상태',
   },
@@ -129,6 +137,12 @@ const CATEGORY_DATA = [
     value: '카테고리5',
     name: '카테고리5',
   },
+];
+
+const SELL_STATUS_DATA = [
+  { id: 1, value: '판매중' },
+  { id: 2, value: '안판매중' },
+  { id: 3, value: '판매중단' },
 ];
 
 // style 컴포넌트
