@@ -3,11 +3,12 @@ import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
 import variables from '../../../styles/variables';
 import ReactQuill, { Quill } from 'react-quill';
-import ImageResize from 'quill-image-resize-module-react';
-
 import 'react-quill/dist/quill.snow.css';
 
+import ImageResize from 'quill-image-resize-module-react';
+
 Quill.register('modules/imageResize', ImageResize);
+
 const Detail = () => {
   const [value, setValue] = useState('');
 

@@ -20,7 +20,7 @@ const ProductRegist = () => {
         <ProductName>
           <RegisterTitle title="상품명" />
           <NameContent>
-            <input placeholder="상품명의 정확한 정보만 입력해주세요. (최소 10자)" />
+            <input placeholder="상품명의 정확한 정보만 입력해 주세요. (최소 10자)" />
           </NameContent>
         </ProductName>
         <Price />

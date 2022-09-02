@@ -1,59 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import OptionValue from './OptionValue';
 
-const OptionSet = ({ optionTitle, setOptionTitle }) => {
-  const [optionValue, setOptionValue] = useState([]);
-
-  const handleEnterPress = e => {
-    if (e.key === 'Enter') {
-      setOptionValue([...optionValue, e.target.value]);
-      e.target.value = '';
-    }
-  };
-
-  const deleteValue = e => {
-    e.target.parentElement.remove();
+const OptionSet = ({ id, optionContent, setOptionContent }) => {
+  const modifyTitle = e => {
+    const targetId = e.target.parentElement.id;
+    const newTitle = e.target.value;
+    let newOptionContent = [...optionContent];
+    newOptionContent.forEach(element => {
+      String(element.id) === targetId && (element.title = newTitle);
+    });
+    setOptionContent(newOptionContent);
   };
 
   return (
-    <OptionValue>
-      {optionValue.map((element, i) => {
-        return (
-          <Values key={i}>
-            <span>{element}</span>
-            <button onClick={deleteValue}>X</button>
-          </Values>
-        );
-      })}
-      <input
-        placeholder="Enter 키를 눌러 연속 입력"
-        onKeyPress={e => {
-          handleEnterPress(e);
-        }}
+    <OptionInfo>
+      <OptionContent id={id}>
+        <input
+          placeholder="옵션명을 입력해 주세요."
+          onChange={e => {
+            modifyTitle(e);
+          }}
+        />
+      </OptionContent>
+      <OptionValue
+        id={id}
+        optionContent={optionContent}
+        setOptionContent={setOptionContent}
       />
-    </OptionValue>
+
+      <input type="checkbox" />
+
+      <div className="close">✕</div>
+    </OptionInfo>
   );
 };
 
 export default OptionSet;
 
-const OptionValue = styled.div`
+const OptionContent = styled.div`
   input {
-    width: 500px;
+    width: 300px;
   }
 `;
 
-const Values = styled.div`
-  border-bottom: 1px solid #dadada;
-  padding: 25px 0 1px 0;
+const OptionInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 20px 10px;
+  margin-top: 20px;
+  background-color: ${props => props.theme.backgroundGray};
 
-  span {
-    font-size: 16px;
+  > div {
+    margin: 0 20px;
   }
 
-  button {
-    background-color: transparent;
+  div {
+    font-size: 14px;
+    color: gray;
+  }
+
+  input {
+    padding-top: 25px;
     border: none;
+    border-bottom: 1px solid ${props => props.theme.lineGray};
+    outline: none;
+    background-color: ${props => props.theme.backgroundGray};
+  }
+
+  .close {
     cursor: pointer;
   }
 `;

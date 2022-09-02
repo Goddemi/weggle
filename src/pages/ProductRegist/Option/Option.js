@@ -4,15 +4,21 @@ import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import RegisterToggle from '../../../components/RegisterToggle/RegisterToggle';
 import variables from '../../../styles/variables';
 import OptionSet from './Components/OptionSet';
+import OptionList from './Components/OptionList';
 
 const Option = () => {
   const [optionBtn, setOptionBtn] = useState('');
+  const [optionContent, setOptionContent] = useState([]);
 
-  const [optionTitle, setOptionTitle] = useState([]);
-
-  const addTitle = e => {
-    setOptionTitle([...optionTitle, '']);
+  const addTitle = () => {
+    const optionId = Date.now();
+    setOptionContent([
+      ...optionContent,
+      { id: optionId, title: '', value: [] },
+    ]);
   };
+
+  console.log(optionContent);
 
   const handleOption = (event, newAlignment) => {
     setOptionBtn(newAlignment);
@@ -38,23 +44,22 @@ const Option = () => {
             <div>옵션값</div>
           </OptionMenu>
 
-          {optionTitle.map((title, i) => {
+          {optionContent.map(element => {
             return (
-              <OptionInfo key={i}>
-                <OptionTitle>
-                  <input />
-                </OptionTitle>
-                <OptionSet />
-
-                <EttentialBox>
-                  <input type="checkbox" />
-                </EttentialBox>
-                <div className="close">✕</div>
-              </OptionInfo>
+              <OptionSet
+                key={element.id}
+                id={element.id}
+                optionContent={optionContent}
+                setOptionContent={setOptionContent}
+              />
             );
           })}
 
           <OptionAddBtn onClick={addTitle}>옵션 추가</OptionAddBtn>
+          <OptionList
+            optionContent={optionContent}
+            setOptionContent={setOptionContent}
+          />
         </OptionBox>
       )}
     </OptionContainer>
@@ -81,15 +86,16 @@ const OptionBox = styled.div`
 
 const OptionMenu = styled.div`
   display: flex;
-  justify-content: space-between;
 
   div {
     &:first-child {
       width: 300px;
+      margin-left: 20px;
     }
 
     &:last-child {
       width: 500px;
+      margin-left: 85px;
     }
   }
 `;
@@ -102,37 +108,3 @@ const OptionAddBtn = styled.button`
   border: 1px solid ${props => props.theme.lineGray};
   cursor: pointer;
 `;
-
-const OptionTitle = styled.div`
-  input {
-    width: 300px;
-  }
-`;
-
-const OptionInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-
-  > div {
-    margin: 0 20px;
-  }
-
-  div {
-    font-size: 14px;
-    color: gray;
-  }
-
-  input {
-    padding-top: 25px;
-    border: none;
-    border-bottom: 1px solid ${props => props.theme.lineGray};
-    outline: none;
-  }
-
-  .close {
-    cursor: pointer;
-  }
-`;
-
-const EttentialBox = styled.div``;

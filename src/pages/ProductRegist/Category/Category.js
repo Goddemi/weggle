@@ -62,5 +62,6 @@ const CategoryContainer = styled.div`
   .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
     border: 1px solid #dadada;
     border-radius: 0;
+    outline: none;
   }
 `;
