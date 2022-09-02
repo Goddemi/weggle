@@ -121,6 +121,12 @@ const PriceContainer = styled.div`
 const Discount = styled.div`
   ${variables.registerBox}
   border-top: 0;
+
+  span {
+    &:last-child {
+      width: 120px;
+    }
+  }
 `;
 
 const DiscountContainer = styled.div``;

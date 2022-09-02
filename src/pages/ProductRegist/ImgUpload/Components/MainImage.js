@@ -63,6 +63,8 @@ const ImageBox = styled.div`
     right: 1px;
     background-color: transparent;
     border: none;
+    color: white;
+
     font-size: 20px;
     cursor: pointer;
   }

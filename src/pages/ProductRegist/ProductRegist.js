@@ -30,6 +30,10 @@ const ProductRegist = () => {
         <Detail />
         <ExchangeRule />
       </RegisterContainer>
+
+      <SaveButton>
+        <button>저장하기</button>
+      </SaveButton>
     </Container>
   );
 };
@@ -41,9 +45,17 @@ const Container = styled.div`
   padding: 50px;
 `;
 
-const PageLocation = styled.div``;
+const PageLocation = styled.div`
+  padding-left: 10px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: gray;
+`;
 
-const PageTitle = styled.div``;
+const PageTitle = styled.div`
+  padding-left: 10px;
+  margin-bottom: 30px;
+`;
 
 const RegisterContainer = styled.div`
   > div {
@@ -62,5 +74,21 @@ const NameContent = styled.div`
     height: 100%;
     border: none;
     outline: none;
+  }
+`;
+
+const SaveButton = styled.div`
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 150px;
+    height: 30px;
+    background-color: #ff0073;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
 `;

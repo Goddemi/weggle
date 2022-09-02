@@ -5,7 +5,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 const RegisterToggle = ({ value, handler, toggleValue }) => {
   return (
     <ToggleButtonGroup
-      color="primary"
+      color="secondary"
       value={value}
       exclusive
       onChange={handler}

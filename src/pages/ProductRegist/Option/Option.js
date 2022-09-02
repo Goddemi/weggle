@@ -17,9 +17,6 @@ const Option = () => {
       { id: optionId, title: '', value: [] },
     ]);
   };
-
-  console.log(optionContent);
-
   const handleOption = (event, newAlignment) => {
     setOptionBtn(newAlignment);
   };
@@ -72,9 +69,13 @@ const OptionContainer = styled.div``;
 const OptionContent = styled.div`
   ${variables.registerBox}
 
-  span:not(.toggle) {
+  span {
     font-size: 13px;
     ${variables.subMenuTitle}
+
+    &:last-child {
+      width: 120px;
+    }
   }
 `;
 
@@ -103,7 +104,7 @@ const OptionMenu = styled.div`
 const OptionAddBtn = styled.button`
   width: 121px;
   height: 30px;
-  margin: 20px 0 0 10px;
+  margin: 20px 0 20px 10px;
   background-color: white;
   border: 1px solid ${props => props.theme.lineGray};
   cursor: pointer;
