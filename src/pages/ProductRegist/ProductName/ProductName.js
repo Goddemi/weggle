@@ -4,15 +4,12 @@ import styled from 'styled-components';
 import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import variables from '../../../styles/variables';
 
-import { useDispatch } from 'react-redux';
-import { registName } from '../../../store';
-
-const ProductName = () => {
-  const dispatch = useDispatch();
-
+const ProductName = ({ data, setData }) => {
   const handleChange = event => {
-    dispatch(registName(event.target.value));
+    setData({ ...data, name: event.target.value });
   };
+
+  console.log(data);
 
   return (
     <NameContainer>

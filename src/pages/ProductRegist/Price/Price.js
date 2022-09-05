@@ -6,13 +6,7 @@ import variables from '../../../styles/variables';
 import PriceInput from '../../../components/PriceInput/PriceInput';
 import RegisterToggle from '../../../components/RegisterToggle/RegisterToggle';
 
-const Price = () => {
-  const [productPrice, setProductPrice] = useState(0);
-
-  const handlePrice = e => {
-    setProductPrice(e.target.value);
-  };
-
+const Price = ({ data, setData }) => {
   const [discountBtn, setDiscountBtn] = useState('web');
 
   const handleDiscount = (event, newAlignment) => {
@@ -25,11 +19,34 @@ const Price = () => {
     setMeasure(e.target.value);
   };
 
+  const [productPrice, setProductPrice] = useState(0);
+
+  const handlePrice = e => {
+    setProductPrice(e.target.value);
+    setData({ ...data, price_original: e.target.value });
+  };
+
   const [discountPrice, setDiscountPrice] = useState(0);
 
   const handleDiscountPrice = e => {
     setDiscountPrice(e.target.value);
+    setData({ ...data, price_discount: data.price_original - discountPrice });
   };
+
+  const totalPrice =
+    measure === '원'
+      ? {
+          finalPrice: Math.round((productPrice - discountPrice) / 10) * 10,
+          finalDiscount: Math.round(discountPrice / 10) * 10,
+        }
+      : {
+          finalPrice:
+            Math.round(
+              (productPrice - (productPrice * discountPrice) / 100) / 10
+            ) * 10,
+          finalDiscount:
+            Math.round((productPrice * discountPrice) / 100 / 10) * 10,
+        };
 
   return (
     <PriceContainer>
@@ -65,44 +82,11 @@ const Price = () => {
           </DiscountInput>
 
           <DiscountPrice>
-            {measure === '원' ? (
-              <>
-                <span>할인된 가격</span>
-                <div>
-                  총{' '}
-                  {(
-                    Math.round((productPrice - discountPrice) / 10) * 10
-                  ).toLocaleString()}
-                  원 (
-                  {(
-                    productPrice -
-                    Math.round((productPrice - discountPrice) / 10) * 10
-                  ).toLocaleString()}
-                  원 할인된 가격)
-                </div>
-              </>
-            ) : (
-              <>
-                <span>할인된 가격</span>
-                <div>
-                  총
-                  {(
-                    Math.round(
-                      (productPrice - (productPrice * discountPrice) / 100) / 10
-                    ) * 10
-                  ).toLocaleString()}
-                  원 (
-                  {(
-                    productPrice -
-                    Math.round(
-                      (productPrice - (productPrice * discountPrice) / 100) / 10
-                    ) *
-                      10
-                  ).toLocaleString()}
-                  원 할인된 가격)
-                </div>
-              </>
-            )}
+            <span>할인된 가격</span>
+            <div>
+              총{totalPrice.finalPrice.toLocaleString()}원 (
+              {totalPrice.finalDiscount.toLocaleString()}원 할인된 가격)
+            </div>
           </DiscountPrice>
         </DiscountContainer>
       )}

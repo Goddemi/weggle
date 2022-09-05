@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import styled from 'styled-components';
 
-const Category = () => {
+const Category = ({ data, setData }) => {
   const CATEGORY_LIST = [
     '식품',
     '패션/잡화',
@@ -17,11 +16,10 @@ const Category = () => {
     '스포츠/레저',
   ];
 
-  const [categorySelect, setCategorySelect] = useState('');
-
   const handleChange = event => {
-    setCategorySelect(event.target.value);
+    setData({ ...data, category: event.target.value });
   };
+  console.log(data);
   return (
     <CategoryContainer>
       <RegisterTitle title="카테고리 선택" />
@@ -31,7 +29,7 @@ const Category = () => {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={categorySelect}
+            value={data.category}
             onChange={handleChange}
             displayEmpty
           >

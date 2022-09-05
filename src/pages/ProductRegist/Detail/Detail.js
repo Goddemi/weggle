@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
-import variables from '../../../styles/variables';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -48,7 +47,7 @@ const Detail = () => {
       container: toolbarOptions,
     },
     imageResize: {
-      parchment: Quill.import('partchment'),
+      parchment: Quill.import('parchment'),
       modules: ['Resize', 'DisplaySize', 'Toolbar'],
     },
   };
