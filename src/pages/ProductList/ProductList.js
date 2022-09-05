@@ -20,7 +20,6 @@ const ProductList = () => {
       setSearchData(res.data);
       setShowResult(res.data);
     });
-    // console.log(info);
   }, []);
 
   const onChange = e => {
@@ -38,10 +37,7 @@ const ProductList = () => {
     const filterData = searchData.filter(row =>
       row.productName.includes(info.productName)
     );
-
-    // console.log('필터데이터', filterData);
     setShowResult(filterData);
-    console.log(info);
   };
 
   return (

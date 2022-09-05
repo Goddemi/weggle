@@ -10,9 +10,7 @@ import dayjs from 'dayjs';
 
 const SearchInfo = props => {
   const { onChange, onKeyPress } = props;
-  const [value, setValue] = useState(dayjs());
 
-  // console.log(value);
   return (
     <S.SearchInfo>
       {SEARCH_DATA.map(data => {
