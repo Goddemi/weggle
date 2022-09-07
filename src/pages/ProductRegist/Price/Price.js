@@ -30,7 +30,7 @@ const Price = ({ data, setData }) => {
 
   const handleDiscountPrice = e => {
     setDiscountPrice(e.target.value);
-    setData({ ...data, price_discount: data.price_original - discountPrice });
+    setData({ ...data, price_discount: data.price_original - e.target.value });
   };
 
   const totalPrice =

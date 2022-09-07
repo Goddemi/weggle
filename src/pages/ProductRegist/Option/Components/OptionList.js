@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const OptionList = ({ optionContent }) => {
-  console.log(optionContent);
   return (
     <OptionListContainer>
       <RequiredOption>
@@ -21,7 +20,7 @@ const OptionList = ({ optionContent }) => {
             );
           })}
           <OptionPrice>
-            <span> 가격 얼마</span>
+            <span> 가격</span>
           </OptionPrice>
         </RequiredList>
       </RequiredOption>
