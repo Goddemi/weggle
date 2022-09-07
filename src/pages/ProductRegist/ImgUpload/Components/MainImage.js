@@ -2,22 +2,26 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import handleResize from './Resize';
 
-const MainImage = () => {
+const MainImage = ({ data, setData, imageArray, setImageArray }) => {
   const [mainImage, setMainImage] = useState([]);
 
   const handleMainImageUpload = async event => {
     let fileArr = event.target.files;
     let newImage = await handleResize(fileArr[0]);
     setMainImage([newImage]);
+
+    setImageArray([...imageArray, imageArray]);
+
+    setData({ ...data, image_list: imageArray });
     event.target.value = '';
   };
 
   const MainImages = ({ imageList }) => {
     const removeImage = () => {
       setMainImage([]);
-
       return;
     };
+
     return imageList.map((image, i) => {
       return (
         <ImageBox key={i}>

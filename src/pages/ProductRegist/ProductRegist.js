@@ -45,7 +45,7 @@ const ProductRegist = () => {
         <ProductName data={data} setData={setData} />
         <Price data={data} setData={setData} />
         <Option />
-        <ImgUpload />
+        <ImgUpload data={data} setData={setData} />
         <VideoUpload width={400} height={300} />
         <Detail />
         <ExchangeRule />
