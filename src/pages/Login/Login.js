@@ -21,30 +21,30 @@ const Login = () => {
     setPerson({ ...person, [name]: value });
   };
 
-  const isAllValid = person.id && person.pw;
+  // const isAllValid = person.id && person.pw;
 
   const passwordChange = () => {
     setPassword(!passwordShown);
   };
 
-  const signIn = e => {
-    e.preventDefault();
-    fetch('/data/userAccountData.json', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: person.id,
-        password: person.pw,
-      }),
-    })
-      .then(response => response.json())
-      .then(result => {
-        if (result.message === 'SUCCESS') {
-          navigate('/');
-          localStorage.setItem('access_token', result.access_token);
-        } else {
-          alert('로그인 실패');
-        }
-      });
+  const signIn = () => {
+    // fetch('/data/userAccountData.json', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     username: person.id,
+    //     password: person.pw,
+    //   }),
+    // });
+    // .then(response => response.json())
+    // .then(result => {
+    //   if (result.message === 'SUCCESS') {
+    //     navigate('/');
+    //     localStorage.setItem('access_token', result.access_token);
+    //   } else {
+    //     alert('로그인 실패');
+    //   }
+    // });
+    navigate('/');
   };
 
   return (
@@ -52,15 +52,17 @@ const Login = () => {
       <Container>
         <LoginWrap>
           <Logo />
-          <form onChange={handleInput}>
+          <form>
             <Input
+              onChange={handleInput}
               person={person}
               passwordShown={passwordShown}
               passwordChange={passwordChange}
             />
           </form>
           {!signIn && <Message />}
-          <LoginButton disabled={!isAllValid} onClick={signIn} />
+          <LoginButton signIn={signIn} />
+
           <ForgotPw to="/">Forgot password?</ForgotPw>
         </LoginWrap>
       </Container>

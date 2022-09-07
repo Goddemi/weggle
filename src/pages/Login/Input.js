@@ -7,7 +7,7 @@ const Input = ({ person, passwordShown, passwordChange }) => {
       <LoginInput
         type="text"
         name="id"
-        value={person.id}
+        defaultValue={person.id}
         placeholder="USERNAME"
         autoComplete="on"
       />
@@ -16,7 +16,7 @@ const Input = ({ person, passwordShown, passwordChange }) => {
           className="pw"
           type={passwordShown ? 'password' : 'text'}
           name="pw"
-          value={person.pw}
+          defaultValue={person.pw}
           placeholder="PASSWORD"
         />
         <i

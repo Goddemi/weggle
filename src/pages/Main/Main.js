@@ -58,7 +58,7 @@ const Main = () => {
     return { id, content, date };
   }
 
-  const prodcutsInquiry = [
+  const productsInquiry = [
     createData(
       'yni0927',
       '새우 알레르기가 있는데 먹어도 상관없나요? 공장이 새우 작업을 한다고 해서 걱정이 됩니다.',
@@ -194,14 +194,14 @@ const Main = () => {
             </Box>
             {/* 첫번째 탭 컨텐츠 */}
             <TabPanel value={value} index={0}>
-              {prodcutsInquiry && (
+              {productsInquiry && (
                 <TableContainer>
                   <Table
                     aria-label="simple table"
                     sx={{ border: '1px solid #DADADA' }}
                   >
                     <TableBody sx={{ bgcolor: '#fff' }}>
-                      {prodcutsInquiry.map((row, idx) => (
+                      {productsInquiry.map((row, idx) => (
                         <TableRow
                           key={idx}
                           sx={{ '& td, & th': { border: 0 } }}
@@ -221,14 +221,16 @@ const Main = () => {
                   </Table>
                 </TableContainer>
               )}
-              <NoData>
-                <p>
-                  <i className="fa-regular fa-circle-exclamation" />
-                  등록된 상품문의가
-                  <br />
-                  없습니다.
-                </p>
-              </NoData>
+              {productsInquiry.length === 0 && (
+                <NoData>
+                  <p>
+                    <i className="fa-regular fa-circle-exclamation" />
+                    등록된 상품문의가
+                    <br />
+                    없습니다.
+                  </p>
+                </NoData>
+              )}
             </TabPanel>
             {/* 두번째 탭 컨텐츠 */}
             <TabPanel value={value} index={1}>
@@ -259,14 +261,16 @@ const Main = () => {
                   </Table>
                 </TableContainer>
               )}
-              <NoData>
-                <p>
-                  <i className="fa-regular fa-circle-exclamation" />
-                  등록된 주문/배송문의가
-                  <br />
-                  없습니다.
-                </p>
-              </NoData>
+              {orderInquiry.length === 0 && (
+                <NoData>
+                  <p>
+                    <i className="fa-regular fa-circle-exclamation" />
+                    등록된 주문/배송문의가
+                    <br />
+                    없습니다.
+                  </p>
+                </NoData>
+              )}
             </TabPanel>
             <MoreInquiryBtn to="/">더보기</MoreInquiryBtn>
           </Box>

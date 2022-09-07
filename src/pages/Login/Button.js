@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LoginButton = () => {
-  return <WideButton>LOGIN</WideButton>;
+const LoginButton = ({ signIn }) => {
+  return <WideButton onClick={signIn}>LOGIN</WideButton>;
 };
 
 export default LoginButton;
@@ -18,4 +18,5 @@ const WideButton = styled.button`
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
 `;
