@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
   a {
     color: black;
     cursor: pointer;

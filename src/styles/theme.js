@@ -3,6 +3,8 @@ export const theme = {
   white: '#FFFFFF',
   footerWhite: '#d9d9d9',
   brown: '#3a1d1d',
+  backgroundGray: '#F3F4F6',
+  lineGray: '#DADADA',
   lightGray: '#B0B0B0',
   middleGray: '#717171',
   deepGray: '#222222',
@@ -13,4 +15,5 @@ export const theme = {
   deepgreen: '#b3b3b3',
   logogreen: '#009b3d',
 };
+
 export default theme;
