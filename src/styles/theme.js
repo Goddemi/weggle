@@ -14,6 +14,7 @@ export const theme = {
   lightgreen: '#027002',
   deepgreen: '#b3b3b3',
   logogreen: '#009b3d',
+  hotpinnk: '#ff0073',
 };
 
 export default theme;

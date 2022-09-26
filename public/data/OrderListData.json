@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "orderNum": "2022041860521",
+    "orderDate": "2022-04-18 18:33",
+    "orderDetail": [
+      {
+        "id": 1,
+        "orderNum": 2022041860521,
+        "title": "상품이름",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+            {
+            "packaging":"포장여부:포장"
+          }
+         ]
+      },
+      {
+        "id": 2,
+        "orderNum": 2022041860521,
+        "title": "상품이름2",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [{}]
+      },
+      {
+        "id": 3,
+        "orderNum": 2022041860521,
+        "title": "상품이름3",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+            {
+            "addOn":"악세서리:펜"
+          }
+         ]
+      }
+    ],
+    "orderPrice": 41200.0,
+    "orderCondition": "판매중",
+    "orderAudit":"심사중",
+    "orderPriceCondition": "입금대기",
+    "orderRegistration": "2022/03/12",
+    "orderRegistrationModify": "2022/04/11"
+  },  
+  {
+    "id": 2,
+    "orderNum": "2022041860521",
+    "orderDate": "2022-04-18 18:33",
+    "orderDetail": [
+      {
+        "id": 2,
+        "orderNum": 2022041860521,
+        "title": "상품이름",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+            {
+            "color":"색상:노랑",
+            "addOn":"악세서리:펜",
+            "packaging":"포장여부:포장"
+          }
+         ]
+      }
+    ],
+    "orderPrice": 10200.0,
+    "orderCondition": "판매중",
+    "orderAudit":"심사중",
+    "orderPriceCondition": "입금대기",
+    "orderRegistration": "2022/03/12",
+    "orderRegistrationModify": "2022/04/11"
+  },
+  {
+    "id": 3,
+    "orderNum": "2022041860521",
+    "orderDate": "2022-04-18 18:33",
+    "orderDetail": [
+      {
+        "id": 3,
+        "orderNum": 2022041860521,
+        "title": "상품이름",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+          {
+            "color":"색상:빨강",
+            "addOn":"악세서리:펜",
+            "packaging":"포장여부:포장"
+          }
+        ]
+      }
+    ],
+    "orderPrice": 1200.0,
+    "orderCondition": "판매중지(품절)",
+    "orderAudit":"심사중",
+    "orderPriceCondition": "입금대기",
+    "orderRegistration": "2022/03/12",
+    "orderRegistrationModify": "2022/04/11"
+  },
+  {
+    "id": 4,
+    "orderNum": "2022041860521",
+    "orderDate": "2022-04-18 18:33",
+    "orderDetail": [
+      {
+        "id": 1,
+        "orderNum": 2022041860521,
+        "title": "상품이름",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+            {
+            "packaging":"포장여부:포장"
+          }
+         ]
+      },
+      {
+        "id": 2,
+        "orderNum": 2022041860521,
+        "title": "상품이름2",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [{}]
+      },
+      {
+        "id": 3,
+        "orderNum": 2022041860521,
+        "title": "상품이름3",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+            {
+            "addOn":"악세서리:펜"
+          }
+         ]
+      }
+    ],
+    "orderPrice": 41200.0,
+    "orderCondition": "판매중",
+    "orderAudit":"심사중",
+    "orderPriceCondition": "입금대기",
+    "orderRegistration": "2022/03/12",
+    "orderRegistrationModify": "2022/04/11"
+  },  
+  {
+    "id": 5,
+    "orderNum": "2022041860521",
+    "orderDate": "2022-04-18 18:33",
+    "orderDetail": [
+      {
+        "id": 2,
+        "orderNum": 2022041860521,
+        "title": "상품이름",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+            {
+            "color":"색상:노랑",
+            "addOn":"악세서리:펜",
+            "packaging":"포장여부:포장"
+          }
+         ]
+      }
+    ],
+    "orderPrice": 10200.0,
+    "orderCondition": "판매중",
+    "orderAudit":"심사중",
+    "orderPriceCondition": "입금대기",
+    "orderRegistration": "2022/03/12",
+    "orderRegistrationModify": "2022/04/11"
+  },
+  {
+    "id": 6,
+    "orderNum": "2022041860521",
+    "orderDate": "2022-04-18 18:33",
+    "orderDetail": [
+      {
+        "id": 3,
+        "orderNum": 2022041860521,
+        "title": "상품이름",
+        "orderPicture": "/images/people.jpg" ,
+        "addOn": [
+          {
+            "color":"색상:빨강",
+            "addOn":"악세서리:펜",
+            "packaging":"포장여부:포장"
+          }
+        ]
+      }
+    ],
+    "orderPrice": 1200.0,
+    "orderCondition": "판매중지(품절)",
+    "orderAudit":"심사중",
+    "orderPriceCondition": "입금대기",
+    "orderRegistration": "2022/03/12",
+    "orderRegistrationModify": "2022/04/11"
+  }
+
+]
