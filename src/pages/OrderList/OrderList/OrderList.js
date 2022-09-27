@@ -16,6 +16,27 @@ const OrderList = () => {
 
   const numPages = Math.ceil(orderData.length / limit);
 
+  let orderDateArr = {};
+  const rowSpan = orderData.reduce((result, item, key) => {
+    if (orderDateArr[item.orderNum] === undefined) {
+      orderDateArr[item.orderNum] = key;
+      result[key] = 1;
+    } else {
+      const firstIndex = orderDateArr[item.orderNum];
+      if (
+        firstIndex === key - 1 ||
+        (item.orderNum === orderData[key - 1].orderNum && result[key - 1] === 0)
+      ) {
+        result[firstIndex]++;
+        result[key] = 0;
+      } else {
+        result[key] = 1;
+        orderDateArr[item.orderNum] = key;
+      }
+    }
+    return result;
+  }, []);
+
   return (
     <>
       <S.TableResult>
@@ -66,33 +87,62 @@ const OrderList = () => {
               <S.TableTd>
                 <S.InputBox type="checkbox" />
               </S.TableTd>
-              {/* 탭에 뭐가 들어가야하는지.....? */}
               {ORDER_TAB_DATA.map(tab => (
-                <S.TableTd key={tab.id}>{tab.title}</S.TableTd>
+                <S.TableTap key={tab.id}>{tab.title}</S.TableTap>
               ))}
             </S.TableTr>
-            {orderData.slice(offset, offset + limit).map(order => {
+            {orderData.slice(offset, offset + limit).map((order, i) => {
               return (
                 <S.TableTr key={order.id}>
                   <S.TableTd>
                     <S.InputBox type="checkbox" />
                   </S.TableTd>
-                  <S.TableTh>
-                    <S.orderDateBox>
-                      <S.OrderSpan> {order.orderNum}</S.OrderSpan>
-                      <S.OrderSpan> {order.orderDate}</S.OrderSpan>
-                    </S.orderDateBox>
-                  </S.TableTh>
+
+                  {rowSpan[i] > 0 && (
+                    <S.TableTh rowSpan={rowSpan[i]}>
+                      <S.orderDateBox>
+                        <S.OrderSpan> {order.orderNum}</S.OrderSpan>
+                        <S.OrderSpan> {order.orderDate}</S.OrderSpan>
+                      </S.orderDateBox>
+                    </S.TableTh>
+                  )}
 
                   <OrderDetail order={order} />
 
-                  <S.TableTd>{order.orderPrice}</S.TableTd>
-                  <S.TableTd>{order.orderCondition}</S.TableTd>
-                  <S.TableTd>{order.orderAudit}</S.TableTd>
+                  <S.TableTd>
+                    <S.OrderSpan>{order.orderPrice}</S.OrderSpan>
+                  </S.TableTd>
 
-                  <S.TableTd>{order.orderPriceCondition}</S.TableTd>
-                  <S.TableTd>{order.orderRegistration}</S.TableTd>
-                  <S.TableTd>{order.orderRegistrationModify}</S.TableTd>
+                  <S.TableTd>
+                    <S.OrderSpan>{order.orderQuantity}</S.OrderSpan>
+                  </S.TableTd>
+
+                  {rowSpan[i] > 0 && (
+                    <>
+                      <S.TableTd rowSpan={rowSpan[i]}>
+                        {order.orderCondition}
+                      </S.TableTd>
+
+                      <S.TableTd rowSpan={rowSpan[i]}>
+                        <S.InputBox />
+                      </S.TableTd>
+
+                      <S.TableTd rowSpan={rowSpan[i]}>
+                        {order.orderShipping}
+                      </S.TableTd>
+
+                      <S.TableTd rowSpan={rowSpan[i]}>
+                        {order.orderInfo}
+                        {order.orderAddress}
+                        {order.orderZipcode}
+                      </S.TableTd>
+
+                      <S.TableTd rowSpan={rowSpan[i]}>
+                        {order.paymentMethod}
+                        {order.orderBank}
+                      </S.TableTd>
+                    </>
+                  )}
                 </S.TableTr>
               );
             })}
@@ -132,29 +182,28 @@ const ORDER_TAB_DATA = [
   },
   {
     id: 4,
-    title: '판매상태',
+    title: '수량',
   },
   {
     id: 5,
-    title: '제품심사',
-  },
-  {
-    id: 6,
     title: '상태',
   },
   {
+    id: 6,
+    title: '운송장번호',
+  },
+  {
     id: 7,
-    title: '등록일',
+    title: '배송',
   },
   {
     id: 8,
-    title: '수정일',
+    title: '배송정보',
   },
 
   {
     id: 9,
-    title: '비고',
+    title: '결제내역',
   },
 ];
-
 export default OrderList;

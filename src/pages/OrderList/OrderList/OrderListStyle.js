@@ -47,7 +47,6 @@ S.TableTr = styled.tr`
 `;
 
 S.TableTd = styled.td`
-  height: 50px;
   border: 1px solid ${({ theme: { style } }) => style.lightGray};
   vertical-align: middle;
 `;
@@ -65,6 +64,12 @@ S.InputBox = styled.input`
   width: 95%;
 `;
 
+S.TableTap = styled.td`
+  padding: 10px;
+  border: 1px solid ${({ theme: { style } }) => style.lightGray};
+  vertical-align: middle;
+`;
+
 // 주문번호/시각
 
 S.orderDateBox = styled.div`
@@ -75,11 +80,35 @@ S.orderDateBox = styled.div`
 
 S.OrderSpan = styled(S.TabSpan)`
   margin: 5px 0;
+  &:hover {
+    background-color: ${({ theme: { style } }) => style.lineGray};
+  }
 `;
 
 S.OrderGraySpan = styled(S.TabSpan)`
   margin: 5px 0;
   color: gray;
+`;
+
+//price quantity styled
+
+S.TablePrice = styled.td`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+`;
+
+S.PriceBox = styled.div`
+  border: 1px solid pink;
+`;
+
+S.OrderContainer = styled.div`
+  ${({ theme: { variables } }) => variables.flex('column')}
+  &:hover {
+    background-color: ${({ theme: { style } }) => style.lineGray};
+  }
 `;
 
 //pageNation btn
