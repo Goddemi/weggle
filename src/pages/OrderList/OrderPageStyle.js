@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 const S = {};
 
+S.OrderPageBackground = styled.div`
+  background-color: ${({ theme: { style } }) => style.backgroundGray};
+  width: 100vw;
+  height: 100vh;
+`;
+
 S.OrderPageContainer = styled.div`
   ${({ theme: { variables } }) => variables.flex('column')}
   background-color: ${({ theme: { style } }) => style.backgroundGray};

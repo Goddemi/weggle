@@ -36,7 +36,8 @@ S.TableTr = styled.tr`
 `;
 
 S.TableTd = styled.td`
-  height: 50px;
+  ${({ theme: { variables } }) => variables.flex('', null, 'baseline')}
+  padding: 10px;
   vertical-align: middle;
 `;
 
@@ -48,16 +49,34 @@ S.TableTh = styled.th`
 `;
 
 S.InputBox = styled.input`
-  width: 95%;
+  /* width: 95%; */
+  /* margin: 0 10px; */
   border: none;
   outline: none;
   cursor: pointer;
+`;
+
+S.InputBoxBorder = styled.input`
+  /* width: 95%; */
+  margin: 0 10px;
+  outline: none;
+  cursor: pointer;
+`;
+
+S.CheckBox = styled.div`
+  ${({ theme: { variables } }) => variables.flex('row')}
+  margin-right: 10px;
+`;
+
+S.CheckBoxContainer = styled.div`
+  ${({ theme: { variables } }) => variables.flex('row')}
 `;
 
 S.SearchBtn = styled.button`
   background-color: ${({ theme: { style } }) => style.hotpinnk};
   width: 160px;
   height: 40px;
+  margin: 0 5px;
   border: none;
   border-radius: 10px;
   &:hover {
@@ -70,10 +89,14 @@ S.SearchBtn = styled.button`
 `;
 
 S.SelectBtn = styled.select`
-  width: 95%;
+  /* width: 95%; */
   border: none;
   outline: none;
   cursor: pointer;
+`;
+
+S.BtnBox = styled.div`
+  ${({ theme: { variables } }) => variables.flex('row')}
 `;
 
 export default S;

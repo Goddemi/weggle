@@ -1,9 +1,9 @@
 import React from 'react';
 import S from './OrderDetailStyle';
 
-const OrderDetail = ({ order }) => {
+const OrderDetail = ({ order, handleHover }) => {
   return (
-    <S.TableTd>
+    <S.TableTd onMouseOver={() => handleHover(0)}>
       <S.OrderCommodityBox>
         <input type="checkbox" />
         <S.OrderImage src={order.orderPicture} alt="orderPicture" />
