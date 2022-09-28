@@ -28,22 +28,24 @@ const Login = () => {
   };
 
   const signIn = () => {
-    // fetch('/data/userAccountData.json', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     username: person.id,
-    //     password: person.pw,
-    //   }),
-    // });
-    // .then(response => response.json())
-    // .then(result => {
-    //   if (result.message === 'SUCCESS') {
-    //     navigate('/');
-    //     localStorage.setItem('access_token', result.access_token);
-    //   } else {
-    //     alert('로그인 실패');
-    //   }
-    // });
+    fetch('http://52.78.124.248:3457/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: person.id,
+        pwd: person.pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          navigate('/');
+          localStorage.setItem('access_token', result.access_token);
+        } else {
+          alert('로그인 실패');
+        }
+      });
+
     navigate('/');
   };
 
