@@ -30,9 +30,7 @@ const ProductRegist = () => {
   });
 
   const dataFetch = () => {
-    axios.post('http://localhost:3457/api/product', data).then(response => {
-      console.log(response);
-    });
+    axios.post('http://localhost:3457/api/product', data).then(response => {});
   };
 
   return (

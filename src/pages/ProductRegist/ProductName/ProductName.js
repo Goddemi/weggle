@@ -8,9 +8,6 @@ const ProductName = ({ data, setData }) => {
   const handleChange = event => {
     setData({ ...data, name: event.target.value });
   };
-
-  console.log(data);
-
   return (
     <NameContainer>
       <RegisterTitle title="상품명" />

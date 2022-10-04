@@ -9,7 +9,7 @@ const MainImage = ({ data, setData, imageArray, setImageArray }) => {
     let fileArr = event.target.files;
     let newImage = await handleResize(fileArr[0]);
     setMainImage([newImage]);
-    await setImageArray([...imageArray, newImage.url]);
+    setImageArray([...imageArray, newImage.url]);
     setData({ ...data, image_list: imageArray });
     event.target.value = '';
   };
