@@ -1,30 +1,16 @@
 import React from 'react';
 import S from './OrderDetailStyle';
 
-const OrderDetail = ({ order, handleHover }) => {
+const OrderDetail = ({ product }) => {
   return (
-    <S.TableTd onMouseOver={() => handleHover(0)}>
+    <S.TableTd>
       <S.OrderCommodityBox>
         <input type="checkbox" />
-        <S.OrderImage src={order.orderPicture} alt="orderPicture" />
+        <S.OrderImage src="/images/people.jpg" alt="orderPicture" />
         <S.OrderCommodityDetail>
-          <S.OrderGraySpan>{order.orderNum}</S.OrderGraySpan>
-          <S.OrderSpan>{order.title}</S.OrderSpan>
-          {order.addOn.map((OrderAddOn, i) => {
-            return (
-              <S.AddonBox key={i}>
-                {OrderAddOn.color && (
-                  <S.OrderGraySpan>{OrderAddOn.color}</S.OrderGraySpan>
-                )}
-                {OrderAddOn.addOn && (
-                  <S.OrderGraySpan>{OrderAddOn.addOn}</S.OrderGraySpan>
-                )}
-                {OrderAddOn.packaging && (
-                  <S.OrderGraySpan>{OrderAddOn.packaging}</S.OrderGraySpan>
-                )}
-              </S.AddonBox>
-            );
-          })}
+          <S.OrderGraySpan>{product.uid}</S.OrderGraySpan>
+          <S.OrderSpan>{product.name}</S.OrderSpan>
+          <S.OrderGraySpan>옵션: {product.option_names}</S.OrderGraySpan>
         </S.OrderCommodityDetail>
       </S.OrderCommodityBox>
     </S.TableTd>

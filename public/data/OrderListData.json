@@ -1,137 +1,214 @@
 [
   {
-    "id": 1,
-    "orderNum": "11",
-    "orderDate": "2022-04-18 18:33",
-    "title": "상품이름",
-    "orderPicture": "/images/people.jpg" ,
-    "orderQuantity": 1,
-    "orderPrice": 2200.0,
-    "addOn": [
+    "orderNum": "orderNum",
+    "orderDate":"2022/02/03 18:33",
+    "orderProducts": [
+      {
+        "id":1,
+        "title":"상품1",
+        "price":1400.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
           {
-          "packaging":"포장여부:포장"
-        }
+            "id":1,
+            "color":"삘강"
+          },
+          {
+            "id":2,
+            "addOn":"악세서리:펜"
+          },
+          {
+            "id":3,
+            "packaging":"포장함"
+          }
+        ]
+      }
     ],
-    "orderCondition":"입금대기",
-    "orderShipping": "무료",
-    "orderInfo": "3213/2321312312",
-    "orderAddress":"대전 동구 머시기 머시기 머시기",
-    "orderZipcode":"우)12312",
-    "paymentMethod":"무통장입금",
-    "orderBank":"신한(123)"
+    "shipping": "무료",
+    "address": "경기도 남양주시 00로 144 0000동 0000호",
+    "pay":"무통장입금",
+    "bank":"신한(231)"
   },
   {
-    "id": 2,
-    "orderNum": "11",
-    "orderDate": "2022-04-18 18:33",
-    "title": "상품이름",
-    "orderPicture": "/images/people.jpg" ,
-    "orderQuantity": 3,
-    "orderPrice": 13000.0,
-    "addOn": [
+    "orderNum": "orderNum2",
+    "orderDate":"2022/02/03 18:33",
+    "orderProducts": [
+      {
+        "id":1,
+        "title":"상품1",
+        "price":1400.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
           {
-          "addOn":"악세서리:펜",
-          "packaging":"포장여부:포장"
-        }
+            "id":1,
+            "color":"삘강"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "title":"상품2",
+        "price":25000.00,
+        "picture":"/images/people.jpg",
+        "count":3,
+        "condition":"입금완료",
+        "addOn":[
+          {
+            "id":2,
+            "addOn":"악세서리:펜"
+          }
+        ]
+      }
     ],
-    "orderCondition":"입금대기",
-    "orderShipping": "무료",
-    "orderInfo": "3213/2321312312",
-    "orderAddress":"대전 동구 머시기 머시기 머시기",
-    "orderZipcode":"우)12312",
-    "paymentMethod":"무통장입금",
-    "orderBank":"신한(123)"
+    "shipping": 2500,
+    "address": "서울특별시 송파구 00로 144 0000동 0000호",
+    "pay":"무통장입금",
+    "bank":"신한(231)"
   },
   {
-    "id": 3,
-    "orderNum": "3",
-    "orderDate": "2022-04-18 18:33",
-    "title": "상품이름",
-    "orderPicture": "/images/people.jpg" ,
-    "orderQuantity": 3,
-    "orderPrice": 200000.0,
-    "addOn": [
+    "orderNum": "orderNum3",
+    "orderDate":"2022/02/03 18:33",
+    "orderProducts": [
+      {
+        "id":1,
+        "title":"상품1",
+        "price":14200.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
           {
-          "color":"색상:빨강",
-          "addOn":"악세서리:펜",
-          "packaging":"포장여부:포장"
-        }
+            "id":1,
+            "color":"삘강"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "title":"상품2",
+        "price":25000.00,
+        "picture":"/images/people.jpg",
+        "count":1,
+        "condition":"입금완료",
+        "addOn":[]
+      }
     ],
-    "orderCondition":"입금완료",
-    "orderShipping": 2400,
-    "orderInfo": "3213/2321312312",
-    "orderAddress":"대전 동구 머시기 머시기 머시기",
-    "orderZipcode":"우)12312",
-    "paymentMethod":"계좌이체",
-    "orderBank":"신한(123)"
+    "shipping": 5000,
+    "address": "서울특별시 송파구 00로 144 0000동 0000호",
+    "pay":"무통장입금",
+    "bank":"신한(231)"
   },
   {
-    "id": 4,
-    "orderNum": "3",
-    "orderDate": "2022-04-18 18:33",
-    "title": "상품이름",
-    "orderPicture": "/images/people.jpg" ,
-    "orderQuantity": 3,
-    "orderPrice": 200000.0,
-    "addOn": [
+    "orderNum": "orderNum4",
+    "orderDate":"2022/02/03 18:33",
+    "orderProducts": [
+      {
+        "id":1,
+        "title":"상품1",
+        "price":11000.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
           {
-          "color":"색상:빨강",
-          "addOn":"악세서리:펜",
-          "packaging":"포장여부:포장"
-        }
+            "id":1,
+            "color":"삘강"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "title":"상품2",
+        "price":25000.00,
+        "picture":"/images/people.jpg",
+        "count":1,
+        "condition":"입금완료",
+        "addOn":[]
+      },
+      {
+        "id":3,
+        "title":"상품3",
+        "price":1000.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
+          {
+            "id":1,
+            "color":"삘강"
+          }
+        ]
+      }
     ],
-    "orderCondition":"입금완료",
-    "orderShipping": 2400,
-    "orderInfo": "3213/2321312312",
-    "orderAddress":"대전 동구 머시기 머시기 머시기",
-    "orderZipcode":"우)12312",
-    "paymentMethod":"계좌이체",
-    "orderBank":"신한(123)"
+    "shipping": 5000,
+    "address": "서울특별시 송파구 00로 144 0000동 0000호",
+    "pay":"무통장입금",
+    "bank":"신한(231)"
   },
   {
-    "id": 5,
-    "orderNum": "3",
-    "orderDate": "2022-04-18 18:33",
-    "title": "상품이름",
-    "orderPicture": "/images/people.jpg" ,
-    "orderQuantity": 3,
-    "orderPrice": 200000.0,
-    "addOn": [
+    "orderNum": "orderNum5",
+    "orderDate":"2022/02/03 18:33",
+    "orderProducts": [
+      {
+        "id":1,
+        "title":"상품1",
+        "price":1400.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
           {
-          "color":"색상:빨강",
-          "addOn":"악세서리:펜",
-          "packaging":"포장여부:포장"
-        }
+            "id":1,
+            "color":"삘강"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "title":"상품2",
+        "price":25000.00,
+        "picture":"/images/people.jpg",
+        "count":3,
+        "condition":"입금완료",
+        "addOn":[
+          {
+            "id":2,
+            "addOn":"악세서리:펜"
+          }
+        ]
+      }
     ],
-    "orderCondition":"입금완료",
-    "orderShipping": 2400,
-    "orderInfo": "3213/2321312312",
-    "orderAddress":"대전 동구 머시기 머시기 머시기",
-    "orderZipcode":"우)12312",
-    "paymentMethod":"계좌이체",
-    "orderBank":"신한(123)"
+    "shipping": 2500,
+    "address": "서울특별시 송파구 00로 144 0000동 0000호",
+    "pay":"무통장입금",
+    "bank":"신한(231)"
   },
   {
-    "id": 6,
-    "orderNum": "4",
-    "orderDate": "2022-04-18 18:33",
-    "title": "상품이름",
-    "orderPicture": "/images/people.jpg" ,
-    "orderQuantity": 3,
-    "orderPrice": 200000.0,
-    "addOn": [
+    "orderNum": "orderNum6",
+    "orderDate":"2022/02/03 18:33",
+    "orderProducts": [
+      {
+        "id":1,
+        "title":"상품1",
+        "price":1400.00,
+        "picture":"/images/people.jpg",
+        "count":2,
+        "condition":"입금대기",
+        "addOn":[
           {
-          "color":"색상:빨강",
-          "addOn":"악세서리:펜",
-          "packaging":"포장여부:포장"
-        }
+            "id":1,
+            "color":"삘강"
+          }
+        ]
+      }
     ],
-    "orderCondition":"입금완료",
-    "orderShipping": 2400,
-    "orderInfo": "3213/2321312312",
-    "orderAddress":"대전 동구 머시기 머시기 머시기",
-    "orderZipcode":"우)12312",
-    "paymentMethod":"계좌이체",
-    "orderBank":"신한(123)"
+    "shipping": 2500,
+    "address": "서울특별시 송파구 00로 144 0000동 0000호",
+    "pay":"무통장입금",
+    "bank":"신한(231)"
   }
 ]

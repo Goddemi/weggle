@@ -27,4 +27,8 @@ S.TabSpan = styled.span`
   margin: 0 10px;
 `;
 
+S.TabBtn = styled(S.TabSpan)`
+  cursor: pointer;
+`;
+
 export default S;

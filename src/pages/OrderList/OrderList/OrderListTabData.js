@@ -31,10 +31,13 @@ export const ORDER_TAB_DATA = [
     id: 8,
     title: '배송정보',
   },
-
   {
     id: 9,
-    title: '결제내역',
+    title: '결제정보',
+  },
+  {
+    id: 10,
+    title: '비고',
   },
 ];
 

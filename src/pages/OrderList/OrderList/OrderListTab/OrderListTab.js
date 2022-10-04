@@ -11,12 +11,12 @@ const OrderListTab = ({ orderData, limit, setLimit }) => {
       </S.TableResult>
       <S.TableTab>
         {TOP_TABLE_DATA.map(tap => (
-          <S.TabSpan key={tap.id}>{tap.title}</S.TabSpan>
+          <S.TabBtn key={tap.id}>{tap.title}</S.TabBtn>
         ))}
       </S.TableTab>
       <S.TableTab>
         {MID_TABLE_DATA.map(tap => (
-          <S.TabSpan key={tap.id}>{tap.title}</S.TabSpan>
+          <S.TabBtn key={tap.id}>{tap.title}</S.TabBtn>
         ))}
 
         <div>

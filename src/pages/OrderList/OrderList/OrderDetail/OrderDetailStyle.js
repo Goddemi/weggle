@@ -8,6 +8,7 @@ S.TabSpan = styled.span`
 
 S.TableTd = styled.td`
   height: 50px;
+  max-width: 300px;
   border: 1px solid ${({ theme: { style } }) => style.lightGray};
   vertical-align: middle;
 `;
