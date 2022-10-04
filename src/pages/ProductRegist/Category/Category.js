@@ -19,7 +19,7 @@ const Category = ({ data, setData }) => {
   const handleChange = event => {
     setData({ ...data, category: event.target.value });
   };
-  console.log(data);
+
   return (
     <CategoryContainer>
       <RegisterTitle title="카테고리 선택" />
