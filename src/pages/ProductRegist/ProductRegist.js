@@ -5,7 +5,7 @@ import axios from 'axios';
 import Category from './Category/Category';
 import ProductName from './ProductName/ProductName';
 import Price from './Price/Price';
-import Option from './Option/Option';
+// import Option from './Option/Option';
 import ImgUpload from './ImgUpload/ImgUpload';
 import VideoUpload from './VideoUpload/VideoUpload';
 import Detail from './Detail/Detail';
@@ -30,9 +30,7 @@ const ProductRegist = () => {
   });
 
   const dataFetch = () => {
-    axios.post('http://localhost:3457/api/product', data).then(response => {
-      console.log(response);
-    });
+    axios.post('http://localhost:3457/api/product', data).then(response => {});
   };
 
   return (
@@ -44,7 +42,7 @@ const ProductRegist = () => {
         <Category data={data} setData={setData} />
         <ProductName data={data} setData={setData} />
         <Price data={data} setData={setData} />
-        <Option />
+        {/* <Option /> */}
         <ImgUpload data={data} setData={setData} />
         <VideoUpload width={400} height={300} />
         <Detail />
