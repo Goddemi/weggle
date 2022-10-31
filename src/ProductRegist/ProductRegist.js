@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import Category from './Category/Category';
-import ProductName from './ProductName/ProductName';
-import Price from './Price/Price';
-// import Option from './Option/Option';
-import ImgUpload from './ImgUpload/ImgUpload';
-import VideoUpload from './VideoUpload/VideoUpload';
-import Detail from './Detail/Detail';
-import ExchangeRule from './ExchangeRule.js/ExchangeRule';
+import Category from './parts/Category';
+import Price from './parts/Price';
+import ProductName from './parts/ProductName';
+import ImgUpload from './parts/ImgUpload/ImgUpload';
+import VideoUpload from './parts/VideoUpload';
+import Detail from './parts/Detail';
+import ExchangeRule from './parts/ExchangeRule';
+// import Option from './parts/Option/Option';
 
 const ProductRegist = () => {
   const [data, setData] = useState({

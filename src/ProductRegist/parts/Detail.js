@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
+import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';

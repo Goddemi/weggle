@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import ProductRegist from './pages/ProductRegist/ProductRegist';
+import ProductRegist from './ProductRegist/ProductRegist';
 
 const Router = () => {
   return (

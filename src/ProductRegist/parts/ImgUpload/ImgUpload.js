@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
+
 import styled from 'styled-components';
+import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
 import variables from '../../../styles/variables';
 import MainImage from './Components/MainImage';
 import SubImage from './Components/SubImage';

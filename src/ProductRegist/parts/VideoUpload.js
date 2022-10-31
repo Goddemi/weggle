@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
+import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
-import variables from '../../../styles/variables';
+import variables from '../../styles/variables';
 
 const VideoUpload = props => {
   const { width, height } = props;

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
+import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
 
-import variables from '../../../styles/variables';
-import PriceInput from '../../../components/PriceInput/PriceInput';
-import RegisterToggle from '../../../components/RegisterToggle/RegisterToggle';
+import PriceInput from '../../components/PriceInput/PriceInput';
+import RegisterToggle from '../../components/RegisterToggle/RegisterToggle';
+import variables from '../../styles/variables';
 
 const Price = ({ data, setData }) => {
   const [discountBtn, setDiscountBtn] = useState('web');

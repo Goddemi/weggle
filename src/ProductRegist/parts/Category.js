@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
+import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';

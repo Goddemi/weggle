@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
-import variables from '../../../styles/variables';
+import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
+import variables from '../../styles/variables';
 
 const ProductName = ({ data, setData }) => {
   const handleChange = event => {

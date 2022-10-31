@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import RegisterTitle from '../../../components/RegisterTitle/RegisterTitle';
+import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
