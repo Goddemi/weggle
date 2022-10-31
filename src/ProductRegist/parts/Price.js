@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import RegisterTitle from '../../components/RegisterTitle/RegisterTitle';
 import styled from 'styled-components';
-
 import PriceInput from '../../components/PriceInput/PriceInput';
 import RegisterToggle from '../../components/RegisterToggle/RegisterToggle';
 import variables from '../../styles/variables';
